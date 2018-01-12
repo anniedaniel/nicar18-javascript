@@ -15,7 +15,7 @@ First thing's first, go to your finder and double-click on the `index.html` file
 Next, right click on your web browser and select `Inspect`. This will open your web console. Web consoles are super handy for debugging (it'll tell you exactly what and where your code went wrong) and you can even run JavaScript methods in there.
 
 
-##Let's do this!
+## Let's do this!
 
 JavaScript talks to HTML pages from within `<script>` tags at the bottom of an HTML file or form it's own special `.js` file. Copy and paste this line into your `main.js` file:
 
@@ -31,11 +31,11 @@ Open up your `index.html` file. You'll see that there is a `<div id="hello"></di
 
 Move your cursor around the page- you'll notice that different elements highlight. Find the `<div id="hello"></div>` on the page. You'll notice that there's now a `Hello JavaScript` in there. 
 
-##Cool, but aren't we here to make charts?
+## Cool, but aren't we here to make charts?
 
 Yes! Let's talk about data. 
 
-###Variables
+### Variables
 
 Variables store data. For instance, let's say you have a list of numbers:
 
