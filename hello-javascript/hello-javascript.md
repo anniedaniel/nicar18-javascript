@@ -26,16 +26,16 @@ Next, right click on your web browser and select `Inspect`. This will open your 
 JavaScript talks to HTML pages from within `<script>` tags at the bottom of an HTML file or form it's own special `.js` file. Copy and paste this line into your `main.js` file:
 
 ```js
-document.getElementById('hello').innerHTML = 'Hello JavaScript';
+document.getElementById('hello').innerHTML = 'Apple Counts';
 ```
 
 Now refresh your web browser. What happened?
 
-The `document` object is the HTML web page, so the first thing this line does is grabs the `document`. Next, the `getElementById()` method tells the `document` to grab whatever has that ID in the parentheses. Once it gets the element with the specified ID, we tell it to grab the `innerHTML` and change it to something else. In this case, `Hello JavaScript`. 
+The `document` object is the HTML web page, so the first thing this line does is grabs the `document`. Next, the `getElementById()` method tells the `document` to grab whatever has that ID in the parentheses. Once it gets the element with the specified ID, we tell it to grab the `innerHTML` and change it to something else. In this case, `Apple Counts`. 
 
 Open up your `index.html` file. You'll see that there is a `<div id="hello"></div>`. Let's find this in our web console. In the top left corner of the console, you'll see a box with a curser on it. Click that.
 
-Move your cursor around the page- you'll notice that different elements highlight. Find the `<div id="hello"></div>` on the page. You'll notice that there's now a `Hello JavaScript` in there. 
+Move your cursor around the page- you'll notice that different elements highlight. Find the `<div id="hello"></div>` on the page. You'll notice that there's now a `Apple Counts` in there. 
 
 ## Cool, but aren't we here to make charts?
 
@@ -64,6 +64,39 @@ document.getElementById('hello').innerHTML = ourData;
 
 This is better for lots of reasons. For one, what if we need to use that list of numbers again? In the first example, we'd have to copy and paste that same list into whatever we needed it for. And what if we wanted to conduct some operations on those numbers like multiply them or display them on the page in any format other than `[1, 2, 3, 4, 5]`?
 
+### A note on data...
+
+Typically you'll need to use some sort of computer readable datatype when you're using JavaScript to handle your data. These include CSV (Comma Separated Values), JSON (JavaScript Object Notation), XML (eXtensable Markup Language) and more.
+
+#### But what about excel?
+
+Excel is a crazy complex proprietary format that JavaScript hasn't quite figured out yet. Your best bet is to stick with relatively simple data types like CSV which is just comma separated values or JSON which was created specifically for JavaScript.
+
+### What the heck is JSON
+
+JSON, pronounced jay-son, is basically a type of data file. Not unlike excel or CSV, it is a syntax for storing and exchanging data. It is made up of JavaScript objects which look like this:
+
+```js
+{
+	"Name": "Princess Mia",
+	"Type": "cat",
+	"Age": 3,
+	"Color": "orange",
+}
+```
+
+If we converted this into a table or spreadsheet, it would look like this:
+
+```sh
+| Name         | Type  | Age  | Color   |
+|----------------------------------------
+| Princess Mia | cat   | 3    | orange  |
+| Willy        | cat   | 6    | grey    |              
+| Sophie       | dog   | 4    | brown   |
+```
+
+Just like spreadsheets, objects have attributes. In this case, our attributes our Name, Type, Age and Color. Those attributes will be the same for all of our objects, meaning that all of the pets will have a name, type, age and color.
+
 
 
 ### Loops
@@ -71,7 +104,8 @@ This is better for lots of reasons. For one, what if we need to use that list of
 Copy the following and paste it into your `script.js`
 
 ```js
-var ourData = [1, 2, 3, 4, 5]
+var pets = [
+]
 for (i in ourData) {
     console.log(ourData[i])
 }
@@ -95,14 +129,29 @@ In your loop between the curly brackets, replace `ourData[i]` with just `i`. Sav
 
 In programming, `i` often stands for `index`. Index is basically the number JavaScript assigns to each item in a list. Indexes always start with 0 in JavaScript. Here, our loop uses the index to know on which item in the list to perform the operation.
 
-## Put it all together
+### Put it all together
+
+So far we've learned what JavaScript and the DOM are, variables, arrays and loops. This is an extremely narrow snippet of what JavaScript can do, but these are basic concepts that you'll use all the time as you dive deeper into programming. 
+
+To get you ready for the next couple of classes in this series, we're going to write a loop that cycles through our data, and arranges it into a table on the page.
+
+Just so we're all on the same page, this is what your JavaScript file should look like now:
+
+```js
+document.getElementById('hello').innerHTML = 'Hello JavaScript';
+
+var ourData = [1, 2, 3, 4, 5]
+for (i in ourData) {
+    console.log(ourData[i])
+}
+```
 
 
 
 
 ### Notes
-(https://github.com/scottpham/JS2WorkshopNICAR2016)[Intro to JavaScript and jQuery from NICAR 2016]
-(https://www.w3schools.com/js/js_intro.asp)[w3schools intro to JavaScript]
-(https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash)[Mozilla's intro to JavaScript]
-(https://www.tutorialspoint.com/javascript/index.htm)[Another JavaScript tutorial]
-(https://www.w3schools.com/js/js_loop_for.asp)[More about for loops]
+[https://github.com/scottpham/JS2WorkshopNICAR2016](Intro to JavaScript and jQuery from NICAR 2016)
+[https://www.w3schools.com/js/js_intro.asp](w3schools intro to JavaScript)
+[https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash](Mozilla's intro to JavaScript)
+[https://www.tutorialspoint.com/javascript/index.htm](Another JavaScript tutorial)
+[https://www.w3schools.com/js/js_loop_for.asp](More about for loops)
