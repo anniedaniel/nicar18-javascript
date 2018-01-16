@@ -2,6 +2,8 @@
 
 This is the first of 3 classes where we'll walk through the fundamentals and syntax of JavaScript. This class assumes you have a basic understanding of HTML and CSS, but mostly we'll be focusing on the JavaScript part of web development.
 
+Everything you need for this class is in the `class` folder in this directory. If you get lost or would rather just listen, completed code and documentation can be found in the `final` folder.
+
 Quick preface, Javascript isn't something you can learn in an hour. This tutorial will hurl a lot of information at you, but hopefully it will serve as a good starting point to get familiar with what you can do and how it works. I *highly* recommend that you go back and dig into some of the tutorials and notes listed at the bottom to get a slightly better footing in JavaScript than a quick hour rundown.
 
 If you get lost, don't panic! Ask questions, but it's also totally cool to sit back, follow along and sort out your code later.
@@ -18,7 +20,7 @@ The DOM stands for Document Object Model, and you'll hear it all the time in web
 
 ## Let's get started
 
-First thing's first, go to your finder and double-click on the `index.html` file. It should open up into your web browser.
+First thing's first, go to your finder and open up the `class` folder. double-click on the `index.html` file. It should open up into your web browser.
 
 Next, right click on your web browser and select `Inspect`. This will open your web console. Web consoles are super handy for debugging (it'll tell you exactly what and where your code went wrong) and you can even run JavaScript methods in there.
 
@@ -26,16 +28,16 @@ Next, right click on your web browser and select `Inspect`. This will open your 
 JavaScript talks to HTML pages from within `<script>` tags at the bottom of an HTML file or form it's own special `.js` file. Copy and paste this line into your `main.js` file:
 
 ```js
-document.getElementById('hello').innerHTML = 'Apple Counts';
+document.getElementById('hello').innerHTML = 'Table of pets';
 ```
 
 Now refresh your web browser. What happened?
 
-The `document` object is the HTML web page, so the first thing this line does is grabs the `document`. Next, the `getElementById()` method tells the `document` to grab whatever has that ID in the parentheses. Once it gets the element with the specified ID, we tell it to grab the `innerHTML` and change it to something else. In this case, `Apple Counts`. 
+The `document` object is the HTML web page, so the first thing this line does is grabs the `document`. Next, the `getElementById()` method tells the `document` to grab whatever has that ID in the parentheses. Once it gets the element with the specified ID, we tell it to grab the `innerHTML` and change it to something else. In this case, `Table of pets`. 
 
 Open up your `index.html` file. You'll see that there is a `<div id="hello"></div>`. Let's find this in our web console. In the top left corner of the console, you'll see a box with a curser on it. Click that.
 
-Move your cursor around the page- you'll notice that different elements highlight. Find the `<div id="hello"></div>` on the page. You'll notice that there's now a `Apple Counts` in there. 
+Move your cursor around the page- you'll notice that different elements highlight. Find the `<div id="hello"></div>` on the page. You'll notice that there's now a `Table of pets` in there. 
 
 ## Cool, but aren't we here to make charts?
 
@@ -74,7 +76,7 @@ Excel is a crazy complex proprietary format that JavaScript hasn't quite figured
 
 ### What the heck is JSON
 
-JSON, pronounced jay-son, is basically a type of data file. Not unlike excel or CSV, it is a syntax for storing and exchanging data. It is made up of JavaScript objects which look like this:
+JSON, pronounced jay-son, is a type of data file. Not unlike excel or CSV, it is a syntax for storing and exchanging data. It is made up of JavaScript objects which look like this:
 
 ```js
 {
@@ -85,7 +87,7 @@ JSON, pronounced jay-son, is basically a type of data file. Not unlike excel or 
 }
 ```
 
-If we converted this into a table or spreadsheet, it would look like this:
+Objects are wrapped in curly brackets and if we converted this into a table or spreadsheet, it would look like this:
 
 ```sh
 | Name         | Type  | Age  | Color   |
@@ -98,40 +100,49 @@ If we converted this into a table or spreadsheet, it would look like this:
 Just like spreadsheets, objects have attributes. In this case, our attributes our Name, Type, Age and Color. Those attributes will be the same for all of our objects, meaning that all of the pets will have a name, type, age and color.
 
 
-
 ### Loops
 
 Copy the following and paste it into your `script.js`
 
 ```js
 var pets = [
+	{
+		"Name": "Princess Mia",
+		"Type": "cat",
+		"Age": 3,
+		"Color": "orange",
+	},
+	{
+		"Name": "Willy",
+		"Type": "cat",
+		"Age": 6,
+		"Color": "grey",
+	},
+	{
+		"Name": "Sophie",
+		"Type": "dog",
+		"Age": 6,
+		"Color": "brown",
+	},
+
 ]
-for (i in ourData) {
-    console.log(ourData[i])
-}
+
+pets.forEach(function(object) { 
+	console.log(object.Name); 
+});
 ```
 
 Save it, refresh your browser, and take a look at the console. What happened?
 
-First, we created a variable `ourData` with our data in the form of an array. Next, we've written a loop. A for loop executes a block of code over and over again. Here, we're using a for loop to cycle through our array and log the numbers in the console. 
+First, we created a JSON variable `pets` with all of our pet objects. Next, we've written a loop. A for loop executes a block of code over and over again. Here, we're using a for loop to cycle through our data and log the names in the console. 
 
-`console.log()` is a JavaScript programmer's best friend. You can put pretty much anything between those parentheses and it'll print in the console. This is super helpful when you're not exactly sure what your code is doing. For instance, what does that `i` in the `for (i in ourData)` mean? Let's log it!
+`console.log()` is a JavaScript programmer's best friend. You can put pretty much anything between those parentheses and it'll print in the console. This is super helpful when you're not exactly sure what your code is doing. For instance, what does that `obj` in the `function(obj)` mean? Let's log it!
 
-In your loop between the curly brackets, replace `ourData[i]` with just `i`. Save, and refresh your browser. You should see something that looks like this:
-
-```sh
-0
-1
-2
-3
-4
-```
-
-In programming, `i` often stands for `index`. Index is basically the number JavaScript assigns to each item in a list. Indexes always start with 0 in JavaScript. Here, our loop uses the index to know on which item in the list to perform the operation.
+Swap out the `obj.Name` in the parenthesis for `obj` then save and refresh your browser.
 
 ### Put it all together
 
-So far we've learned what JavaScript and the DOM are, variables, arrays and loops. This is an extremely narrow snippet of what JavaScript can do, but these are basic concepts that you'll use all the time as you dive deeper into programming. 
+So far we've learned what JavaScript and the DOM are, variables, objects and loops. This is an extremely narrow snippet of what JavaScript can do, but these are basic concepts that you'll use all the time as you dive deeper into programming. 
 
 To get you ready for the next couple of classes in this series, we're going to write a loop that cycles through our data, and arranges it into a table on the page.
 
@@ -140,16 +151,104 @@ Just so we're all on the same page, this is what your JavaScript file should loo
 ```js
 document.getElementById('hello').innerHTML = 'Hello JavaScript';
 
-var ourData = [1, 2, 3, 4, 5]
-for (i in ourData) {
-    console.log(ourData[i])
-}
+var pets = [
+	{
+		"Name": "Princess Mia",
+		"Type": "cat",
+		"Age": 3,
+		"Color": "orange",
+	},
+	{
+		"Name": "Willy",
+		"Type": "cat",
+		"Age": 6,
+		"Color": "grey",
+	},
+	{
+		"Name": "Sophie",
+		"Type": "dog",
+		"Age": 6,
+		"Color": "brown",
+	},
+
+]
+
+
+pets.forEach(function(obj) { 
+	console.log(obj); 
+});
 ```
 
+In your `index.html` file, paste this code above the `</body>` tag:
 
+```html
+<table>
+	<tr>
+		<thead>Name</thead>
+		<thead>Type</thead>
+		<thead>Age</thead>
+		<thead>Color</thead>
+	</tr>
+	<tbody class="pet-table">
+	</tbody>
+</table>
+```
+
+Save and refresh your browser. You should see some table headers on your page.
+
+Paste this code into your `script.js` below our for loop:
+
+```js
+table = document.getElementById('pet-table')
+
+pets.forEach(function(obj) { 
+	var tableRow = table.insertRow(-1);
+	for(i in obj){
+		var tableCell = tableRow.insertCell(-1);
+		tableCell.innerHTML = obj[i];
+	}
+});
+```
+
+This doen't look like a ton of code, but trust me, it's doing *a lot*. Save and refresh your page. You should see a table there with all of the pets. Let's walk through what happened.
+
+First, we start with our for loop cycling through all of our pet objects. Next, we create another variable `tableRow`. This creates a new row for our table for every pet object (3 rows). 
+
+Then we have *another* for loop. This loop cycles through each of the *attributes* within the object and creates a tableCell variable for each attribute to live. Finally, it adds everything to the page with that `innerHTML` method.
+
+
+### Bonus round
+
+Let's dig in a little deeper to see exactly what just happened. Let's start by talking about that new `i` that showed up in the second function. 
+
+`console.log()` is a JavaScript programmer's best friend. You can put pretty much anything between those parentheses and it'll print in the console. This is super helpful when you're not exactly sure what your code is doing, like that new `i`. Let's log the `i` right above where we create our `tableCell` variable:
+
+```js
+console.log(i)
+```
+
+Check out your console we opened up at the beginning and you should see something that looks like this
+
+```js
+0
+1
+2
+3
+```
+
+This is called an `index`. It's a term frequently used in programming that indicates an element's place in a series. Since `Color` is last in the series, it has an index of 3. In JavaScript, indexes always start at 0.
+
+In for loops, indexes track which element to perform the operation on. We see this at the very end with this line:
+
+```js
+tableCell.innerHTML = obj[i];
+```
+
+This grabs the table cell we created just above (`tableCell.`), and then gives it the attribute of wherever it is in the loop to display on the page (`obj[i]`).
 
 
 ### Notes
+
 [https://github.com/scottpham/JS2WorkshopNICAR2016](Intro to JavaScript and jQuery from NICAR 2016)
 [https://www.w3schools.com/js/js_intro.asp](w3schools intro to JavaScript)
 [https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash](Mozilla's intro to JavaScript)
