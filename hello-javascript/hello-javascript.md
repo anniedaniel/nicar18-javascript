@@ -210,47 +210,51 @@ pets.forEach(function(obj) {
 });
 ```
 
-This doen't look like a ton of code, but trust me, it's doing *a lot*. Save and refresh your page. You should see a table there with all of the pets. Let's walk through what happened.
-
-First, we start with our for loop cycling through all of our pet objects. Next, we create another variable `tableRow`. This creates a new row for our table for every pet object (3 rows). 
-
-Then we have *another* for loop. This loop cycles through each of the *attributes* within the object and creates a tableCell variable for each attribute to live. Finally, it adds everything to the page with that `innerHTML` method.
-
-
-### Bonus round
-
-Let's dig in a little deeper to see exactly what just happened. Let's start by talking about that new `i` that showed up in the second function. 
-
-`console.log()` is a JavaScript programmer's best friend. You can put pretty much anything between those parentheses and it'll print in the console. This is super helpful when you're not exactly sure what your code is doing, like that new `i`. Let's log the `i` right above where we create our `tableCell` variable:
+This doen't look like a ton of code, but trust me, it's doing *a lot*. Save and refresh your page. You should see a table there with all of the pets. Let's walk through what happened step-by-step.
 
 ```js
-console.log(i)
+table = document.getElementById('pet-table')
 ```
 
-Check out your console we opened up at the beginning and you should see something that looks like this
+First, we create a table variable. This is so we can talk to it later when we want to add our pets to it.
 
 ```js
-0
-1
-2
-3
+pets.forEach(function(obj) { 
 ```
 
-This is called an `index`. It's a term frequently used in programming that indicates an element's place in a series. Since `Color` is last in the series, it has an index of 3. In JavaScript, indexes always start at 0.
+Next, we start our for loop. You'll notice that this looks different than the for loop we used earlier. There are probably 10 different ways to write a for loop in JavaScript and this is another one of my favorites because it's very explicit about what it's doing. For each object in our object list, perform this function or code block.
 
-In for loops, indexes track which element to perform the operation on. We see this at the very end with this line:
+```js
+var tableRow = table.insertRow(-1);
+```
+
+Then we create another variable `tableRow`. This creates a new line for each pet.
+
+```js
+for(i in obj){
+```
+
+Geeze louise, another for loop *within* a for loop?! You betcha another for loop! This time we're looping through the attributes within our pet object. So the first time this loop runs it's grabbing the name, the second time it's grabbing the type, next the age and finally the color.
+
+
+```js
+var tableCell = tableRow.insertCell(-1);
+```
+
+
+For all of the pet attributes we're looping through, we make another variable for the table cells where our pet data points will live. This line of code tells the DOM to find where we made our table row in the first loop a couple of steps back, and to insert a new table cell. 
+
+That `(-1)` is just special to this particular `insertCell()` method and means that we want the table cell to be added to the end. This is something I'd never seen before and had to google. We're learning together!
 
 ```js
 tableCell.innerHTML = obj[i];
 ```
-
-This grabs the table cell we created just above (`tableCell.`), and then gives it the attribute of wherever it is in the loop to display on the page (`obj[i]`).
-
+This is where we tell our table what exactly we want to add. First, we tell the DOM to grab the `tableCell` we created a second ago. Next, that `innerHTML` preps it for whatever text or HTML snippet we wnant to stick in there. In this case, we want to add the data in our object. Now for a little bit of JavaScript magic. We get this data by getting the object we're looping and telling it to grab the data inside with `[i]`.
 
 ### Notes
 
-[https://github.com/scottpham/JS2WorkshopNICAR2016](Intro to JavaScript and jQuery from NICAR 2016)
-[https://www.w3schools.com/js/js_intro.asp](w3schools intro to JavaScript)
-[https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash](Mozilla's intro to JavaScript)
-[https://www.tutorialspoint.com/javascript/index.htm](Another JavaScript tutorial)
-[https://www.w3schools.com/js/js_loop_for.asp](More about for loops)
+[Intro to JavaScript and jQuery from NICAR 2016](https://github.com/scottpham/JS2WorkshopNICAR2016)
+[w3schools intro to JavaScript](https://www.w3schools.com/js/js_intro.asp)
+[Mozilla's intro to JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash)
+[Another JavaScript tutorial](https://www.tutorialspoint.com/javascript/index.htm)
+[More about for loops](https://www.w3schools.com/js/js_loop_for.asp)

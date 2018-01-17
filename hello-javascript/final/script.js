@@ -29,7 +29,7 @@ table = document.getElementById('pet-table')
 
 //  This loops through each pet object and appends a table row to our table that we created above
 pets.forEach(function(obj) { 
-	tr = table.insertRow(-1);
+	var tr = table.insertRow(-1);
 	// Then we loop through the attributes in each object and create a new table cell for the data
 	for(i in obj){
 		// This creates the table cell. The `-1` at the end is just a JavaScript thing that tells 
