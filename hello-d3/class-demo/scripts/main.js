@@ -7,8 +7,12 @@ console.log(d3);
 ////////////////////
 
 /* you can select things individually */
-d3.select("#p1").style("font-size","22px");
+
+var p1 = d3.select("#p1");
+p1.style("font-size","22px");
+
 /* select all of the divs with class "selections" and change the font color*/
-d3.selectAll(".selections").style("background", "pink");
+var allP = d3.selectAll(".selections");
+allP.style("background", "pink");
 
 
