@@ -24,8 +24,7 @@ First thing's first, go to your finder and open up the `class` folder. double-cl
 
 Next, right click on your web browser and select `Inspect`. This will open your web console. Web consoles are super handy for debugging (it'll tell you exactly what and where your code went wrong) and you can even run JavaScript methods in there.
 
-
-JavaScript talks to HTML pages from within `<script>` tags at the bottom of an HTML file or form it's own special `.js` file. Copy and paste this line into your `main.js` file:
+Open up your `class` folder in your text editor, and copy and paste this line into your `main.js` file:
 
 ```js
 document.getElementById('hello').innerHTML = 'Table of pets';
@@ -184,12 +183,12 @@ In your `index.html` file, paste this code just underneath `<div id="hello"></di
 ```html
 <table>
 	<tr>
-		<thead>Name</thead>
-		<thead>Type</thead>
-		<thead>Age</thead>
-		<thead>Color</thead>
+		<th>Name</th>
+		<th>Type</th>
+		<th>Age</th>
+		<th>Color</th>
 	</tr>
-	<tbody class="pet-table">
+	<tbody id="pet-table">
 	</tbody>
 </table>
 ```
@@ -410,8 +409,8 @@ These are the fundamentals of JavaScript, and now that you have a little familia
 
 ### Notes
 
-[Intro to JavaScript and jQuery from NICAR 2016](https://github.com/scottpham/JS2WorkshopNICAR2016)
-[w3schools intro to JavaScript](https://www.w3schools.com/js/js_intro.asp)
-[Mozilla's intro to JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash)
-[Another JavaScript tutorial](https://www.tutorialspoint.com/javascript/index.htm)
-[More about for loops](https://www.w3schools.com/js/js_loop_for.asp)
+- [Intro to JavaScript and jQuery from NICAR 2016](https://github.com/scottpham/JS2WorkshopNICAR2016)
+- [w3schools intro to JavaScript](https://www.w3schools.com/js/js_intro.asp)
+- [Mozilla's intro to JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash)
+- [Another JavaScript tutorial](https://www.tutorialspoint.com/javascript/index.htm)
+- [More about for loops](https://www.w3schools.com/js/js_loop_for.asp)
