@@ -268,12 +268,12 @@ var plants = [
 	{
 		"Name": "Jalepeno",
 		"Type": "pepper",
-		"Color": "Long, green peppers",
+		"Description": "Long, green peppers",
 	},
 	{
 		"Name": "Haworthia",
 		"Type": "succulent",
-		"Color": "Dark green, spiky succulent with white stripes",
+		"Description": "Dark green, spiky succulent with white stripes",
 	},
 
 ]
@@ -284,7 +284,7 @@ First thing, let's get our `index.html` file ready for a new table. Paste this j
 <table>
 	<tr>
 		<th>Name</th>
-		<th>Color</th>
+		<th>Type</th>
 		<th>Description</th>
 	</tr>
 	<tbody id="plant-table">
