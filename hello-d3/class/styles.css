@@ -1,0 +1,32 @@
+body {
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.blue-selection {
+	background:lightpink;
+	color:black;
+	font-weight:bold;
+}
+
+.inner-paragraph {
+	font-style:italic;
+	margin-left:50px;
+	font-size:12px;
+	text-transform:uppercase;
+}
+
+
+#svg svg {
+	border:1px solid black;
+}
+
+circle.data-circle {
+	fill:none;
+	stroke:red;
+	stroke-width:5px;
+}
+
+rect.pet-bar {
+	fill:purple;
+	stroke:none;
+}
