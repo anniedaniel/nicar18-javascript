@@ -13,7 +13,7 @@ p1.style("font-size","22px").style("padding","20px").attr("class","blue-selectio
 
 /* select all of the divs with class "selections" and change the font color*/
 var allP = d3.selectAll(".selections");
-allP.style("color","white").style("background","darkcyan");
+allP.style("color","white").style("background","navy");
 
 /* add an inner paragraph with append */
 allP.append("p")
