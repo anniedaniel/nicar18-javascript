@@ -63,6 +63,9 @@ var circles = svg.selectAll('.data-circle')
 ///////SCALES///////
 ////////////////////
 
+var svgWidth = 300;
+var svgHeight = 150;
+
 var pets = [
 	{
 		"Name": "Princess Mia",
@@ -85,23 +88,20 @@ var pets = [
 ];
 
 var petSVG = d3.select('#pets-svg').append('svg')
-	.attr('width','3000px')
-	.attr('height','150px');
-
-
-// an LINEAR scale for their ages
+	.attr('width',svgWidth)
+	.attr('height',svgHeight);
 
 var ageScale = d3.scaleLinear()
-		.domain([
-			0, d3.max(pets, function(d){ return d.Age })
-		]) // set the domain from zero (youngest possible pet age) to the max Age value in our data set
-	    .range([0, 300]); // this is the _range_ we want to align our data to. let's make it the width of our SVG so we can make horizontal bars
+	.domain([
+		0, d3.max(pets, function(d){ return d.Age })
+	]) // set the domain from zero (youngest possible pet age) to the max Age value in our data set (one of many nice d3 array manipulation methods)
+    .range([0, svgWidth]); // this is the _range_ we want to align our data to. let's make it the width of our SVG so we can make bars
 
 var petScale = d3.scaleBand()
 	.domain(pets.map(function(d) { return d.Name; })) 
 	.paddingInner(0.1)
     .paddingOuter(0.5)
-	.range([0, 150], .1); //setting range from 0 to 200px, like our svg. scaleBand() scales are good for positioning bars
+	.range([0, svgHeight], .1); //setting range from 0 to our svgHeight. scaleBand() scales are good for positioning bars
 
 var bars = petSVG.selectAll('.pet-bar')
 	.data(pets).enter()
