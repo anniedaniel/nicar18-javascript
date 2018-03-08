@@ -116,22 +116,3 @@ var bars = petSVG.selectAll('.pet-bar')
 	});
 
 
-
-
-///////////////////////////////////////////////////////////////
-/////IF WE GET TO THIS, D3 AXIS FX, VERTICAL BARS AND MORE!/////
-///////////////////////////////////////////////////////////////
-
-var letters = [
-  {name: "A", frequency: .08167},
-  {name: "B", frequency: .01492},
-  {name: "C", frequency: .02780},
-  {name: "D", frequency: .04253},
-  {name: "E", frequency: .12702}
-];
-
-var chartWidth = 400;
-var chartHeight = 200;
-
-
-

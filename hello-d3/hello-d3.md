@@ -257,6 +257,7 @@ Now that we understand all the basic pieces and parts that put together a D3 vis
 
 Here's some links to other useful methods we won't have time to cover:
 
+- [https://bl.ocks.org/mbostock/3019563](The margin convention)
 - [https://github.com/d3/d3-axis](D3 axis)
 - [https://github.com/d3/d3-transition](D3 transitions)
 
