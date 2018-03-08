@@ -83,7 +83,7 @@ function ready(data) {
 //We're going to combine both trace and paint into one colored map.
 //First, we use queue to speed up and simplify the process of loading map and data.
 //We tell it to run our function after they're ready.
-https: //unpkg.com/us-atlas@1.0.2/us/10m.json
+//https: //unpkg.com/us-atlas@1.0.2/us/10m.json
     queue()
     .defer(d3.json, "us.json")
     .defer(d3.csv, "poverty_data.csv")
