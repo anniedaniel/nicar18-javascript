@@ -257,12 +257,12 @@ Now that we understand all the basic pieces and parts that put together a D3 vis
 
 Here's some links to other useful methods we won't have time to cover:
 
-- [https://bl.ocks.org/mbostock/3019563](The margin convention)
-- [https://github.com/d3/d3-axis](D3 axis)
-- [https://github.com/d3/d3-transition](D3 transitions)
+- [The margin convention](https://bl.ocks.org/mbostock/3019563)
+- [D3 axis](https://github.com/d3/d3-axis)
+- [D3 transitions](https://github.com/d3/d3-transition)
 
 If you're interested in learning more about D3 while you're at NICAR, you can stay for the next session on making maps with D3, and there are two more sessions on D3 later in the conference that will expand on these concepts further:
 
-- [https://www.ire.org/events-and-training/event/3189/3678/](Introduction to D3)
-- [https://www.ire.org/events-and-training/event/3189/3679/](Intermediate D3)
+- [Introduction to D3](https://www.ire.org/events-and-training/event/3189/3678/)
+- [Intermediate D3](https://www.ire.org/events-and-training/event/3189/3679/)
 
