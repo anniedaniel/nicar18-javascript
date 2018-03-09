@@ -24,7 +24,7 @@ First thing's first, go to your finder and open up the `class` folder. double-cl
 
 Next, right click on your web browser and select `Inspect`. This will open your web console. Web consoles are super handy for debugging (it'll tell you exactly what and where your code went wrong) and you can even run JavaScript methods in there.
 
-Open up your `class` folder in your text editor, and copy and paste this line into your `main.js` file:
+Open up your `class` folder in your text editor, and copy and paste this line into your `script.js` file:
 
 ```js
 document.getElementById('hello').innerHTML = 'Table of pets';
